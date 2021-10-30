@@ -1,0 +1,10 @@
+#include <iostream>
+using namespace std;
+
+int main()
+
+{
+ 	cout << "\\    /\\\n )  ( ')\n(  /  ) \n \\(__)|";  //백슬레쉬 \출력은 \\가 \ 1개 출력
+    return 0;
+
+}
