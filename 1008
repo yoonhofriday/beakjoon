@@ -1,0 +1,22 @@
+#include <iostream>
+using namespace std;
+
+int main()
+
+{
+	long double A, B;
+	cin >> A >> B;
+	
+	if(A < 0)
+	{
+		return 0;
+	}
+	if(B > 10)
+	{
+		return 0;
+	}
+	cout.precision(15); //소수점 고정 해제 
+ 	cout << A /B ;  
+    return 0;
+
+}
