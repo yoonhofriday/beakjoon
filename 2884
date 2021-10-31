@@ -1,0 +1,29 @@
+#include <iostream>
+using namespace std;
+
+int main()
+
+{
+	int A, B;
+	
+	cin >> A >> B;
+	
+	if (B >= 45)
+	{
+		B = B - 45;
+		cout << A << " " << B;
+		return 0;
+	}
+	if (B < 45)
+	{
+		B = 60 + B - 45;
+		A--;
+	}
+	if (A < 0)
+	{
+		A = 23;
+	}
+	
+	cout << A << " " << B;
+	return 0;
+}
