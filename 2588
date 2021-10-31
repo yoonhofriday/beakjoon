@@ -1,0 +1,21 @@
+#include <iostream>
+using namespace std;
+
+int main()
+
+{
+	int A, B, result1, result10, result100;
+	
+	cin >> A >> B;
+	
+	result100 = B / 100;	//100의 자리 수  
+	result10 = ((B - (result100 * 100)) / 10); // 10의 자리 수  
+	result1 = (B - (result100 * 100) - (result10 * 10)) ; 	//일의 자리 수
+	
+	cout << A * result1 << endl;
+	cout << A * result10 << endl;
+	cout << A * result100 << endl;
+	cout << A * B;
+	
+	return 0;
+}
