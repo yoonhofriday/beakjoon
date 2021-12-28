@@ -1,0 +1,36 @@
+#include <iostream>
+
+using namespace std;
+
+int main(void)
+{
+	int a, b, c, plus;
+	int i = 0;
+	int arr[10] = {0, };
+
+
+	cin >> a >> b >> c;
+
+	if (a < 100 || a >= 1000)
+		return 0;
+	if (b < 100 || b >= 1000)
+		return 0;
+	if (c < 100 || c >= 1000)
+		return 0;
+
+	plus = a * b * c;
+
+	while (plus != 0)
+	{
+		i++;
+		arr[plus % 10] = arr[plus % 10] + 1;
+		plus = plus / 10;
+	}
+
+	for (int j = 0; j < 10; j++)
+		cout << arr[j] << endl;
+	
+
+
+	return 0;
+}
