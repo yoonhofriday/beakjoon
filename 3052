@@ -1,0 +1,30 @@
+#include <iostream>
+
+using namespace std;
+
+int main(void)
+{
+	int arr[10] = { 0, };
+	int num, grade = 10;
+
+	for (int i = 0; i < 10; i++)
+	{
+		cin >> num;
+		arr[i] = num % 42;
+	}
+	for (int i = 9; i > 0; i--)
+	{
+		for (int j = 0; j < i; j++)
+		{
+			if (arr[9 - i] == arr[j + 10 - i])
+			{
+				grade--;
+				break;
+			}
+		}
+	}
+	cout << grade;
+
+
+	return 0;
+}
