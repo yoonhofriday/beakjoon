@@ -1,0 +1,43 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main()
+{
+	int num = 0;
+	int sum;
+	int SIZE = 0;
+	float percentage;
+	float result;
+
+	cin >> num;
+
+	for (int i = 0; i < num; i++)
+	{
+		sum = 0;
+		result = 0;
+		percentage = 0;
+
+		cin >> SIZE;
+
+		vector<int> vec(SIZE);
+
+		for (int j = 0; j < vec.size(); j++)
+		{
+			cin >> vec[j];
+			sum += vec[j];
+		}
+		result = sum / SIZE;
+		for (int j = 0; j < vec.size(); j++)
+		{
+			if (result < vec[j])
+			{
+				percentage++;
+			}
+		}
+		percentage = percentage * 100 / vec.size();
+		cout.precision(5);
+		cout << percentage << "%" << endl;
+		
+	}
+}
