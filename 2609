@@ -1,0 +1,39 @@
+#include <iostream>
+
+using namespace std;
+
+int gcd(int a, int b)
+{
+	if (b == 0)
+		return a;
+	else
+		return gcd(b, a % b);
+}
+
+int lcm(int a, int b)
+{
+	int gcd_result = 0;
+
+	gcd_result = gcd(a, b);
+
+	return gcd_result * (a / gcd_result) * (b / gcd_result); 
+}
+
+int main(void)
+{
+	ios_base::sync_with_stdio(false);
+	cin.tie(nullptr);
+
+	int num1 = 0, num2 = 0;
+	int gcd_result = 0;
+	int lcm_result = 0;
+
+	cin >> num1 >> num2;
+
+	gcd_result = gcd(num1, num2);
+	lcm_result = lcm(num1, num2);
+
+	cout << gcd_result << "\n" << lcm_result;
+
+	return 0;
+}
