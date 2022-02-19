@@ -1,0 +1,78 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+
+using namespace std;
+
+void vector_init(vector<int>& all_dwarf)
+{
+	for (int i = 0; i < all_dwarf.size(); i++)
+	{
+		int num;
+		cin >> num;
+		all_dwarf[i] = num;
+	}
+}
+
+void identify(vector<int>& all_dwarf)
+{
+	int criminals = 0;
+
+	for (int i = 0; i < all_dwarf.size(); i++)
+	{
+		criminals += all_dwarf[i];
+	}
+	criminals -= 100;
+	for (int i = 0; i < all_dwarf.size(); i++)
+	{
+		for (int j = all_dwarf.size() - 1; j > i; j--)
+		{
+			if (all_dwarf[i] + all_dwarf[j] == criminals)
+			{
+				if (i < j)
+				{
+					all_dwarf.erase(all_dwarf.begin() + j);
+					all_dwarf.erase(all_dwarf.begin() + i);
+					return;
+				}
+				if (i > j)
+				{
+					all_dwarf.erase(all_dwarf.begin() + i);
+					all_dwarf.erase(all_dwarf.begin() + j);
+					return;
+					
+				}
+				
+			}
+		}
+	}
+
+}
+
+void print_vector(vector<int> all_dwarf)
+{
+	for (int i = 0; i < all_dwarf.size(); i++)
+	{
+		cout << all_dwarf[i] << "\n";
+	}
+}
+
+void ascending_orde(vector<int>& all_dwarf)
+{
+	sort(all_dwarf.begin(), all_dwarf.end());
+}
+int main(void)
+{
+	ios_base::sync_with_stdio(false);
+	cin.tie(nullptr);
+	
+	vector<int> all_dwarf(9);
+
+	vector_init(all_dwarf);
+
+	identify(all_dwarf);
+
+	ascending_orde(all_dwarf);
+
+	print_vector(all_dwarf);
+}
